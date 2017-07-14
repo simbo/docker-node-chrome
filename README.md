@@ -5,7 +5,7 @@ docker-node-chrome
 
 [![docker:simbo/node-chrome](https://img.shields.io/docker/build/simbo/node-chrome.svg)](https://hub.docker.com/r/simbo/node-chrome/)
 
-Derivated from [simbo/node](https://hub.docker.com/r/simbo/node/).
+Derivate of [simbo/node](https://hub.docker.com/r/simbo/node/).
 
 ``` sh
 docker pull simbo/node-chrome:latest
@@ -40,7 +40,6 @@ Use these flags with `docker run …` or add them to your service in `docker-com
 `karma.conf.js`:
 
 ``` js
-
 module.exprots = (config) => {
   config.set({
     mime: {
