@@ -14,7 +14,7 @@ docker pull simbo/node-chrome:latest
 
 ## Version tags
 
-  - `latest` / `0.1.0`
+  - `latest` / `8-59` / `8.1.4-59.0.3071.115`  
     Node 8.1.4  
     Google Chrome 59.0.3071.115
 
@@ -24,23 +24,23 @@ docker pull simbo/node-chrome:latest
 
 ### Docker
 
-Use these flags with `docker run …` or add them to your service in `docker-compose.yml`:
+Use these flags with `docker run` or add them to your service in `docker-compose.yml`:
 
   - `--add-cap=SYS_ADMIN`  
     This fixes a user namespace issue with OSX.  
     An alternative mitigation would be to a [special seccomp profile](https://twitter.com/jessfraz/status/681934414687801345).
 
   - `--shm-size=1024M`  
-    Chrome needs some more shared memory than docker's default of 64 MB.  
-    Alternatively you can mount `/dev/shm` from your host machine into the container.
+    Chrome needs some more shared memory than docker’s default of 64 MB.  
+    Alternatively you can mount `/dev/shm` from your host machine.
 
 
 ### Karma
 
-`karma.conf.js`:
+`karma.conf.js` with [karma-chrome-launcher](https://www.npmjs.com/package/karma-chrome-launcher) installed:
 
 ``` js
-module.exprots = (config) => {
+module.exports = (config) => {
   config.set({
     mime: {
       'text/x-typescript': ['ts','tsx']
